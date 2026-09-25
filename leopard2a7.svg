@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="800" viewBox="0 0 600 800">
+  <!-- 背景 -->
+  <rect width="600" height="800" fill="#2b2f36"/>
+
+  <!-- 履带（左右两条） -->
+  <rect x="80" y="120" width="80" height="560" rx="18" fill="#1a1d21" stroke="#0d0f11" stroke-width="3"/>
+  <rect x="440" y="120" width="80" height="560" rx="18" fill="#1a1d21" stroke="#0d0f11" stroke-width="3"/>
+  <!-- 履带纹路 -->
+  <g stroke="#3a4048" stroke-width="6">
+    <line x1="80" y1="160" x2="160" y2="160"/>
+    <line x1="80" y1="220" x2="160" y2="220"/>
+    <line x1="80" y1="280" x2="160" y2="280"/>
+    <line x1="80" y1="340" x2="160" y2="340"/>
+    <line x1="80" y1="400" x2="160" y2="400"/>
+    <line x1="80" y1="460" x2="160" y2="460"/>
+    <line x1="80" y1="520" x2="160" y2="520"/>
+    <line x1="80" y1="580" x2="160" y2="580"/>
+    <line x1="80" y1="640" x2="160" y2="640"/>
+    <line x1="440" y1="160" x2="520" y2="160"/>
+    <line x1="440" y1="220" x2="520" y2="220"/>
+    <line x1="440" y1="280" x2="520" y2="280"/>
+    <line x1="440" y1="340" x2="520" y2="340"/>
+    <line x1="440" y1="400" x2="520" y2="400"/>
+    <line x1="440" y1="460" x2="520" y2="460"/>
+    <line x1="440" y1="520" x2="520" y2="520"/>
+    <line x1="440" y1="580" x2="520" y2="580"/>
+    <line x1="440" y1="640" x2="520" y2="640"/>
+  </g>
+
+  <!-- 车体 -->
+  <polygon points="180,140 420,140 430,180 430,660 420,700 180,700 170,660 170,180"
+           fill="#4a5a3a" stroke="#2c3624" stroke-width="4"/>
+  <!-- 车体前部倾斜装甲线 -->
+  <polygon points="180,140 420,140 410,175 190,175" fill="#5a6b48" stroke="#2c3624" stroke-width="2"/>
+  <!-- 车体后部发动机舱 -->
+  <rect x="185" y="600" width="230" height="90" fill="#3d4a30" stroke="#2c3624" stroke-width="2"/>
+  <text x="300" y="650" font-size="16" fill="#8a9a78" text-anchor="middle" font-family="sans-serif">ENGINE</text>
+
+  <!-- 侧裙板 -->
+  <rect x="165" y="200" width="15" height="440" fill="#3a4630" stroke="#2c3624" stroke-width="2"/>
+  <rect x="420" y="200" width="15" height="440" fill="#3a4630" stroke="#2c3624" stroke-width="2"/>
+
+  <!-- 炮塔 -->
+  <polygon points="220,260 380,260 400,320 400,480 380,540 220,540 200,480 200,320"
+           fill="#55663f" stroke="#2c3624" stroke-width="4"/>
+  <!-- 炮塔顶部细节 -->
+  <circle cx="300" cy="360" r="35" fill="#46552f" stroke="#2c3624" stroke-width="2"/>
+  <rect x="270" y="410" width="60" height="40" rx="4" fill="#3d4a30" stroke="#2c3624" stroke-width="2"/>
+
+  <!-- 主炮管 -->
+  <rect x="285" y="40" width="30" height="230" fill="#3a4030" stroke="#1f2418" stroke-width="3"/>
+  <!-- 炮口制退器 -->
+  <rect x="278" y="40" width="44" height="50" rx="4" fill="#2c3624" stroke="#1f2418" stroke-width="2"/>
+  <!-- 炮管热护套纹 -->
+  <g stroke="#4a5540" stroke-width="2">
+    <line x1="285" y1="110" x2="315" y2="110"/>
+    <line x1="285" y1="150" x2="315" y2="150"/>
+    <line x1="285" y1="190" x2="315" y2="190"/>
+    <line x1="285" y1="230" x2="315" y2="230"/>
+  </g>
+
+  <!-- 车长/炮手观瞄设备 -->
+  <rect x="255" y="290" width="30" height="30" fill="#2c3624"/>
+  <rect x="315" y="290" width="30" height="30" fill="#2c3624"/>
+
+  <!-- 模块判定区域示意（半透明色块） -->
+  <rect x="285" y="60" width="30" height="180" fill="#ff4444" opacity="0.25"/>
+  <rect x="200" y="260" width="200" height="280" fill="#ffaa00" opacity="0.20"/>
+  <rect x="170" y="180" width="260" height="60" fill="#ff00ff" opacity="0.18"/>
+  <rect x="80" y="120" width="80" height="560" fill="#00ffff" opacity="0.18"/>
+  <rect x="440" y="120" width="80" height="560" fill="#00ffff" opacity="0.18"/>
+  <rect x="185" y="600" width="230" height="90" fill="#00ff00" opacity="0.20"/>
+
+  <!-- 图例 -->
+  <g font-family="sans-serif" font-size="14" fill="#ddd">
+    <rect x="30" y="730" width="16" height="16" fill="#ff4444" opacity="0.5"/>
+    <text x="52" y="743">炮管/炮闩</text>
+    <rect x="150" y="730" width="16" height="16" fill="#ffaa00" opacity="0.5"/>
+    <text x="172" y="743">炮塔</text>
+    <rect x="230" y="730" width="16" height="16" fill="#ff00ff" opacity="0.5"/>
+    <text x="252" y="743">车体前部</text>
+    <rect x="340" y="730" width="16" height="16" fill="#00ffff" opacity="0.5"/>
+    <text x="362" y="743">履带</text>
+    <rect x="430" y="730" width="16" height="16" fill="#00ff00" opacity="0.5"/>
+    <text x="452" y="743">引擎</text>
+  </g>
+
+  <!-- 标题 -->
+  <text x="300" y="30" font-size="20" fill="#cfd8c0" text-anchor="middle" font-family="sans-serif">豹2A7 俯视示意图</text>
+</svg>
