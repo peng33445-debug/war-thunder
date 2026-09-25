@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<title>豹2A7 俯视预览</title>
+<style>
+  body { margin:0; background:#1a1d21; display:flex; flex-direction:column;
+         align-items:center; justify-content:center; height:100vh; color:#ccc;
+         font-family:sans-serif; gap:16px; }
+  canvas { background:#2b2f36; border:1px solid #444; }
+  button { padding:8px 16px; background:#46552f; color:#eee; border:none;
+           border-radius:4px; cursor:pointer; }
+  button:hover { background:#5f7048; }
+</style>
+</head>
+<body>
+  <h2>豹2A7 俯视（半写实）</h2>
+  <canvas id="cv" width="300" height="300"></canvas>
+  <div>
+    <button id="toggle">显示/隐藏 模块判定区</button>
+    <button id="rotate">旋转 45°</button>
+  </div>
+  <p id="hit" style="color:#f1c40f">鼠标移到坦克上，看命中哪个模块</p>
+
+<script type="module">
+import { drawTank, hitTest, TANK_SIZE } from './js/tank.js';
+
+const cv = document.getElementById('cv');
+const ctx = cv.getContext('2d');
+let angle = 0;
+let showModules = false;
+
+function render() {
+  ctx.clearRect(0, 0, cv.width, cv.height);
+  ctx.fillStyle = '#2b2f36';
+  ctx.fillRect(0, 0, cv.width, cv.height);
+  drawTank(ctx, cv.width/2, cv.height/2, angle, showModules);
+}
+
+document.getElementById('toggle').onclick = () => {
+  showModules = !showModules;
+  render();
+};
+document.getElementById('rotate').onclick = () => {
+  angle += Math.PI / 4;
+  render();
+};
+
+// 鼠标命中测试
+cv.addEventListener('mousemove', (e) => {
+  const rect = cv.getBoundingClientRect();
+  // 屏幕坐标 → 画布坐标
+  let mx = e.clientX - rect.left - cv.width/2;
+  let my = e.clientY - rect.top  - cv.height/2;
+  // 反向旋转到坦克本地坐标
+  const cos = Math.cos(-angle), sin = Math.sin(-angle);
+  const lx = mx * cos - my * sin;
+  const ly = mx * sin + my * cos;
+
+  const hit = hitTest(lx, ly);
+  const names = { front:'正面', side:'侧面', rear:'后面', engine:'发动机' };
+  document.getElementById('hit').textContent = hit
+    ? `命中：${names[hit]}`
+    : '未命中坦克';
+});
+
+render();
+</script>
+</body>
+</html>
